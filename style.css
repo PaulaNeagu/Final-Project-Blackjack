@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+}
+
+#title {
+    font: 130px serif;
+    color: black;
+    text-align: center;
+    padding-top: 50px;
+    text-shadow: 20px 20px 40px rgba(0, 0, 0, 0.932);
+    
+}
+
+/* names */
+#players{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 300px;
+    margin-right: 260px;
+    margin-top: 40px;
+}
+
+#dealer-name {
+    font: 50px serif;
+    text-shadow: 8px 8px 13px rgba(0, 0, 0, 0.932);
+    color:black;
+    text-align: center;
+    margin: 60px;
+}
+
+#player-name {
+    font: 50px serif;
+    color: black;
+    text-shadow: 8px 8px 13px rgba(0, 0, 0, 0.932);
+    text-align: center;
+    margin: 60px;
+}
+
+#results {
+    text-align: center;
+    color: black;
+    text-shadow: 8px 8px 13px rgba(0, 0, 0, 0.932);
+    font: 35px serif;
+}
+
+/* cards */
+#players-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 185px;
+    margin-right: 185px;
+    flex-wrap: wrap;
+}
+
+#dealer-cards img {
+    height: 180px;
+    width: auto;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#dealer-cards {
+    margin-top: 20px;
+    display: flex;
+}
+
+#your-cards img {
+    height: 180px;
+    width: auto;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#your-cards {
+    margin-top: 20px;
+    display: flex;
+}
+ 
+/* body */
+body {
+    background: transparent url(./images2/background.png) 0 0 no-repeat;
+    border-radius: 5px;
+    color: rgb(66, 0, 0);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    font: 14px/17px Helvetica, verdana, arial, sans-serif;
+}
+
+/*actions */
+
+#actions {
+    bottom: 2%;
+    left: 2%;
+    padding: 7px;
+    padding-top: 10px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.438);
+    margin: 20px;
+    margin-left: 50px;
+    border-radius: 5px;
+    height: 75px;
+    border: 2px solid rgba(255, 187, 0, 0.226);
+    width: 450px;
+}
+
+#deal{
+    padding: 1.5%;
+    border-radius: 5px;
+    background-color:rgba(255, 187, 0, 0.596);
+    color: rgba(0, 0, 0, 0.596);
+    font: 700 20px /22px Helvetica, Arial, Verdana, sans-serif;
+    border: 3px solid  rgba(0, 0, 0, 0.568);
+    cursor: pointer;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 32px;
+}
+
+#hit{
+    padding: 1%;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+    color: rgba(255, 187, 0, 0.596);
+    font: 700 20px /22px Helvetica, Arial, Verdana, sans-serif;
+    border: 2px solid  rgba(255, 187, 0, 0.466);
+    cursor: pointer;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#stand{
+    padding: 1%;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+    color: rgba(255, 187, 0, 0.596);
+    font: 700 20px /22px Helvetica, Arial, Verdana, sans-serif;
+    border: 2px solid  rgba(255, 187, 0, 0.466);
+    cursor: pointer;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.btn {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/*turns */
+#turns {
+    border-radius: 5px;
+    height: 75px;
+    position: fixed;
+    right: 0;
+    bottom: 2%;
+    width: 200px;
+    padding: 7px;
+    padding-left: 20px;
+    margin: 20px;
+    margin-right: 50px;
+    background: rgba(0, 0, 0, 0.438);
+    border: 2px solid rgba(255, 187, 0, 0.226);
+    right: 2%;
+}
+
+#Loss, #Winnings {
+    color: rgba(255, 187, 0, 0.596);
+    font: 700 18px /20px Helvetica, Arial, Verdana, sans-serif;
+    margin: 13px;
+    text-shadow: 3px 3px black;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flip {
+    0% {
+        transform: perspective(400px) rotateY(0);
+    }
+    100% {
+        transform: perspective(400px) rotateY(360deg);
+    }
+}
+
+.ycards {
+    animation: slideIn 2s ease-in-out;
+}
+
+.hcards {
+    animation: slideIn 2s ease-in-out;
+}
+
+.dcards {
+    animation: slideIn 2s ease-in-out;
+}
+
+
+@media screen and (max-width: 830px) {
+    #title {
+        font-size: 150px; 
+        padding-top: 10px;
+        margin: 0%; 
+        text-shadow: 8px 25px 20px rgba(0, 0, 0, 0.932)
+    }
+
+    #players {
+        margin-left: 10px;
+        margin-right: 10px;
+        text-shadow: 4px 20px 10px rgba(0, 0, 0, 0.932)
+    }
+    
+    #player-name, #dealer-name {
+
+        font-size: 40px;
+        text-shadow: 8px 25px 20px rgba(0, 0, 0, 0.932)
+    }
+
+    #players-cards, #dealer-cards img, #your-cards img {
+
+        margin: 10px 10px;
+        height: 100px; 
+    }
+
+    #actions {
+        font-size: 20px;
+        padding: 0px;
+        height: 70px;
+        width: 500px;
+        margin: 0%;
+    }
+
+    #deal{
+        font-size: 30px;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 20px;
+        margin: 10px;
+        margin-left: 40px;
+    }
+
+    #hit {
+        font-size: 30px;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 20px;
+        margin: 10px;
+        margin-left: 40px;
+    }
+
+    #stand {
+        font-size: 30px;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 20px;
+        margin: 10px;
+        margin-left: 40px;
+    }
+    
+    #turns{
+        font: 20px;
+        padding: 8px;
+        height: 70px;
+        width: 170px;
+        margin: 0%;
+    }
+
+    #Loss, #Winnings {
+        font-size: 20px;
+        margin-left: 13px;
+        margin-top: 10;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+    #title {
+        font-size: 80px; 
+        padding-top: 10px;
+        margin: 0%; 
+        text-shadow: 8px 25px 20px rgba(0, 0, 0, 0.932)
+    }
+
+    #players {
+        margin-left: 10px;
+        margin-right: 10px;
+        text-shadow: 4px 20px 10px rgba(0, 0, 0, 0.932)
+    }
+    
+    #player-name, #dealer-name {
+
+        font-size: 30px;
+        margin: 10px;
+        text-shadow: 8px 25px 20px rgba(0, 0, 0, 0.932)
+    }
+
+    #actions {
+        font-size: 20px;
+        padding: 2px;
+        height: 45px;
+        width: 205px;
+        margin-left: 10px;
+        margin-bottom: 0px;
+    }
+
+    #deal{
+        font-size: 15px;
+        padding: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0px;
+        margin-left: 8px;
+    }
+
+    #hit {
+        font-size: 15px;
+        padding: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0px;
+        margin-left: 3px;
+    }
+
+    #stand {
+        font-size: 15px;
+        padding: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0px;
+        margin-left: 3px;
+    }
+    
+    #turns{
+        font: 8px;
+        padding: 0px;
+        height: 45px;
+        width: 90px;
+        margin-left: 8px;
+        margin-bottom: 0px;
+        margin-right: 10px;
+    }
+
+    #Loss, #Winnings {
+        font-size: 10px;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+}
+
+@media screen and (max-width: 412px) {
+    #title {
+        font-size: 80px; 
+        padding-top: 10px;
+        margin: 0%; 
+        text-shadow: 8px 25px 20px rgba(0, 0, 0, 0.932)
+    }
+
+    #players {
+        margin-left: 10px;
+        margin-right: 10px;
+        text-shadow: 4px 20px 10px rgba(0, 0, 0, 0.932)
+    }
+    
+    #player-name, #dealer-name {
+
+        font-size: 40px;
+        margin: 10px;
+        text-shadow: 8px 25px 20px rgba(0, 0, 0, 0.932)
+    }
+
+    #actions {
+        font: 20px;
+        padding: 8px;
+        height: 60px;
+        width: 265px;
+        margin-left: 8px;
+        margin-bottom: 0px;
+    }
+
+    #deal{
+        font-size: 20px;
+        padding: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0px;
+        margin-left: 10px;
+    }
+
+    #hit {
+        font-size: 20px;
+        padding: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0px;
+        margin-left: 10px;
+    }
+
+    #stand {
+        font-size: 20px;
+        padding: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0px;
+        margin-left: 10px;
+    }
+    
+    #turns{
+        font: 8px;
+        padding: 0px;
+        height: 60px;
+        width: 100px;
+        margin-left: 8px;
+        margin-bottom: 0px;
+        margin-right: 10px;
+    }
+
+    #Loss, #Winnings {
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+
+}
